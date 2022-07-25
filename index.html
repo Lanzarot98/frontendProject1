@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Main menu</title>
+    <style>
+        :root { /*nuestras variables. root nos indican variables css */
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title-content img{
+            width: 150px;
+        }
+        .class-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        .class-list button{
+            text-decoration: none;
+            padding: 8px 10px;
+        }
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            font: var(--md);
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="title-content">
+            <img src="./logos/logo_yard_sale.svg" alt="logo">
+            <h1 class="title">Project page links</h1>
+        </div>
+        <div class="class-list">
+            <button class="primary-button" href="login.html">Login</button>
+            <button class="primary-button" href="home1.html">Home</button>
+            <button class="primary-button" href="create_account.html">Create account</button>
+            <button class="primary-button" href="menu2Mobile.html">Menu mobile</button>
+            <button class="primary-button" href="menuOrder.html">Menu order</button>
+            <button class="primary-button" href="my_account.html">My account</button>
+            <button class="primary-button" href="navbar.html">Navbar</button>
+            <button class="primary-button" href="newPassword.html">New password</button>
+            <button class="primary-button" href="password_recovery2.html">Password recovery</button>
+            <button class="primary-button" href="product_details.html">Product details</button>
+            <button class="primary-button" href="shopping_cart1.html">my orders</button>
+            <button class="primary-button" href="shopping_cart2.html">Shopping cart</button>
+            <button class="primary-button" href="sing_outDeskstop.html">Sign out</button>
+        </div>
+
+    </div>
+</body>
+</html>
