@@ -1,6 +1,22 @@
 {
-    "cSpell.ignoreWords": [
-        "Lanzarot"
-    ],
-    "liveServer.settings.port": 5501
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#6001ce",
+        "activityBar.activeBorder": "#200f00",
+        "activityBar.background": "#6001ce",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#200f00",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#6001ce",
+        "statusBar.background": "#48019b",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#6001ce",
+        "statusBarItem.remoteBackground": "#48019b",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#48019b",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#48019b99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.remoteColor": "#48019B"
 }
