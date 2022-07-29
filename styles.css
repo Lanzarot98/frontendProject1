@@ -193,6 +193,10 @@ aside {
     padding: 0 24px;
 }
 
+.navbar-shopping-cart img:hover{
+    cursor: pointer;
+}
+
 .title-container{
     display: flex;
 }
@@ -330,7 +334,7 @@ object-fit: cover;
 border-radius: 0 0 20px 20px; /*izquierda arriba, derecha arriba, abajo derecha, abajo izquierda*/
 }
 #productDetail {
-    margin: 0px 24px 0 24px;
+    margin: 20px, 0, 20px, 0;
 }
 #productDetail p:nth-child(1){
     font-weight: bold;

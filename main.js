@@ -5,10 +5,15 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetailContainer = document.querySelector('#productDetail');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
+
 
 navEmail.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoAside);
+productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
+
 
 function toggleDesktopMenu() {
     const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
@@ -17,14 +22,15 @@ function toggleDesktopMenu() {
         shoppingCartContainer.classList.add('inactive');
     }
     
+    closeProductDetailAside()
     desktopMenu.classList.toggle('inactive');
-
 }
 
 function toggleCarritoAside() { // lo que despliega el carrito
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive'); // es closed ya que si contiene la clase inactive es porque no aparece el mobile menu
     const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
-   
+   const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
+
     if (!isMobileMenuClosed) {
         //preguntar si el mobileMenu esta open, hay que cerrarlo
         mobileMenu.classList.add('inactive');
@@ -32,9 +38,11 @@ function toggleCarritoAside() { // lo que despliega el carrito
     if (!isDesktopMenuClosed) {
         desktopMenu.classList.add('inactive');
     }
+    if (!isProductDetailClosed) {
+        productDetailContainer.classList.add('inactive');
+    }
     
     shoppingCartContainer.classList.toggle('inactive'); // entonces como el mobilemenu se cierra si hacemos click en el carrito
-
 }
 
 function toggleMobileMenu() {
@@ -44,9 +52,20 @@ function toggleMobileMenu() {
         //preguntar si el mobileMenu esta open, hay que cerrarlo
         shoppingCartContainer.classList.add('inactive');
     }
-    
-    
+
+    closeProductDetailAside();
+
     mobileMenu.classList.toggle('inactive'); //cada vez que se le de click ejecuta esta funcion que quita o pone la clase inactive
+}
+
+function openProductDetailAside(){
+    shoppingCartContainer.classList.add('inactive'); // cerrar carrito de compra
+    desktopMenu.classList.add('inactive');
+    productDetailContainer.classList.remove('inactive'); // abrir product detail
+}
+
+function closeProductDetailAside(){
+    productDetailContainer.classList.add('inactive');
 }
 
 const productList = [];
@@ -72,10 +91,12 @@ function renderProducts(array) {
         const productCart = document.createElement('div');
         productCart.classList.add('product-card');
     
+
         const productImg = document.createElement('img');
        // productImg.classList.add('product-img');
         productImg.setAttribute('src', product.image);
-    
+        productImg.addEventListener('click', openProductDetailAside);
+
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
     
