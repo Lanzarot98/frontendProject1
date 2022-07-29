@@ -1,0 +1,406 @@
+/* GENERAL */
+:root { /*nuestras variables. root nos indican variables css */
+    /*Para colocar la variable se hace con var(--nombreVariable) */
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --sm: 14px; /* variables de medidas */
+    --md: 16px;
+    --lg: 18px;
+
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0px;
+}
+
+.inactive {
+    display: none;
+}
+
+/*Part css del navbar.html ini */
+.menu {
+    display: none;
+}
+.logo {
+    width: 100px;
+}
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.navbar-left {
+    display: flex;
+}
+.navbar-left ul{
+    margin-left: 12px;
+}
+.navbar-left ul li a,
+.navbar-right ul li a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.navbar-left ul li a:hover ,
+.navbar-right ul li a:hover {
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+}
+.navbar-email {
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-right: 12px;
+    cursor: pointer;
+}
+.navbar-shopping-cart {
+    position: relative; /* */
+}
+.navbar-shopping-cart div {
+    width: 16px;
+    height: 16px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+/*Part css del navbar.html fin */
+
+/*Part css del sign_outDeskstop.html ini */
+.desktop-menu {
+    position: absolute;
+    background: var(--white);
+    top: 60px;
+    right: 60px;
+    width: 100px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;  /* arriba derecha abajo izquierda */
+}
+.desktop-menu ul {
+    list-style: none;  /* quito los punticos de la lista */
+    padding: 0;
+    margin: 0;
+}
+.desktop-menu ul li{
+    text-align: end; /* alineacion a la derecha */
+}
+.desktop-menu ul li:nth-child(1),
+.desktop-menu ul li:nth-child(2) { /* solo al primer li y al segundo li */
+    font-weight: bold;
+}
+
+.desktop-menu ul li:last-child{ /* el ultimo de los elementos de li */
+    padding-top: 20px;
+    border-top: 1px solid var(--very-light-pink)
+}
+.desktop-menu ul li:last-child a{ /* el ultimo de los elementos de li señalando a a */
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+.desktop-menu ul li a{ /* todos los ul que esten dentro de li y todos los li que esten dentro de a */
+    color: var(--black);
+    text-decoration: none;
+    margin-bottom: 20px; /* a los elementos in line no se les puede aplicar el margin */
+    display: inline-block;
+}
+/*Part css del sign_outDeskstop.html fin */
+
+
+/*Part css del menu2Mobile.html ini */
+.mobile-menu {
+    background-color: var(--white);
+    position: absolute;
+    top: 60px;
+    padding:24px;
+    left: 0;
+    width: 100%;
+}
+.mobile-menu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    /*margin-bottom: 24px;
+    display: inline-block;*/
+}
+.mobile-menu ul{
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+}
+.mobile-menu ul:nth-child(1){
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu ul:nth-child(2){
+    margin-bottom: 70px;
+    display: inline-block;
+}
+
+.mobile-menu ul:nth-child(3) { 
+    position: absolute;
+    bottom:0;
+}
+.mobile-menu ul:nth-child(3) li:nth-child(1){ 
+    margin-bottom: 5px;
+}
+
+.mobile-menu ul li{
+    margin-bottom: 24px;
+}
+.mobile-menu .email{
+    font-size: var(--sm);
+    font-weight: 300; /*!important;  o llamar por .mobile-menu .sing-out que es también especifico*/
+    
+}
+.mobile-menu .sign-out{
+    font-size: var(--sm);
+    color: var(--hospital-green);  
+}
+/*Part css del menu2Mobile.html fin */
+
+/* Part css del shopping_cart2.html ini */
+aside {
+    background-color: var(--white);
+    width: 360px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+}
+
+#shoppingCartContainer {
+    padding: 0 24px;
+}
+
+.title-container{
+    display: flex;
+}
+.title-container img{
+    transform: rotate(180deg);
+    margin-right: 14px;
+}
+.title {
+    font-size: var(--lg);
+    font-weight: bold;
+}
+.primary-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white); /*color del texto del boton */
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md); 
+    font-weight: bold;
+    height: 42px;
+}
+.order {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 0 24px; /*arriba y abajo 0 px y en los costados 24px */
+}
+.order p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.order p:nth-child(2){
+    text-align: right;
+    font-weight: bold;
+}
+.order p span:nth-child(1){
+    font-size: var(--md);
+    font-weight: bold;
+}
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto; /*auto (el de la imagen)  1fr auto auto serían entonces 4 divisiones*/
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+.shopping-cart figure{
+    margin: 0;
+}
+.shopping-cart figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover; /*esto hace que el tamaño de la img se acomode */
+}
+.shopping-cart p:nth-child(2){
+    color: var(--very-light-pink);
+}
+.shopping-cart p:nth-child(3){
+    font-size: var(--md);
+    font-weight: bold;
+}
+/* Part css del shopping_cart2.html fin */
+
+/* Part css del home1.html ini */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px); /*podemos colocar funciones repeat(cantidad de columnas, tamaño de las columnas) */
+    gap: 26px; /* le agrega dicho espacio entre las divisiones */
+    place-content: center;
+    margin-top: 20px;
+}
+.product-card {
+    width: 240px;
+}
+.product-card img{
+    width: 240px; /*de la misma cantidad que su padre */
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover; /*esto nos dice que esta imagen va tener su tamaño tal cual independientemente del width y height, es decir, se va adecuar al tamaño */
+}
+.product-card .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+}
+.product-card .product-info figure {
+    margin: 0px;
+}
+.product-card .product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+.product-card .product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+.product-card .product-info div p:nth-child(2) {
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--very-light-pink);
+}
+/* Part css del home1.html ini */
+
+/* part css del product_details.html ini */
+.product-detail-close {
+    background: var(--white);
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2; /*esto es para que se coloque por encima */
+    padding: 8px;
+    border-radius: 50%;
+}
+.product-detail-close:hover { /*el hijo inmediatemente sea imagen y sea el primero de ellos */
+    cursor: pointer;
+}
+#productDetail > img:nth-child(2) {
+width: 100%; /*que sea del tamaño del contenedor, que es 360px */
+height: 360px;
+object-fit: cover;
+border-radius: 0 0 20px 20px; /*izquierda arriba, derecha arriba, abajo derecha, abajo izquierda*/
+}
+#productDetail {
+    margin: 0px 24px 0 24px;
+}
+#productDetail p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+#productDetail p:nth-child(2){
+    color: var(--very-light-pink);
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 36px;
+}
+#productDetail p:nth-child(3){
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 36px;
+}
+.primary-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white); /*color del texto del boton */
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md); 
+    font-weight: bold;
+    height: 42px;
+}
+.add-to-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* part css del product_details.html fin */
+
+
+/* para mobiles */
+@media (max-width: 640px) { 
+    .menu {
+        display: block
+    }
+    .navbar-left ul{
+        display: none;
+    }
+    .navbar-email {
+        display: none;
+    }
+    .desktop-menu {
+        display: none;
+    }
+    aside {
+        width: 100%;
+    }
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, 140px); /*podemos colocar funciones repeat(cantidad de columnas, tamaño de las columnas) */
+    }
+    .product-card {
+        width: 140px;
+    }
+    .product-card img{
+        width: 140px; /*de la misma cantidad que su padre */
+        height: 140px;
+    }
+}
+
+/* Para desktop */
+@media (min-width: 641px) {
+    .mobile-menu {
+        display: none;
+    }
+}
